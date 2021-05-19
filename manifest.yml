@@ -1,0 +1,11 @@
+---
+applications:
+- name: juice-shop
+  buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack
+      - https://github.com/cloudfoundry/nginx-buildpack.git
+  memory: 700M
+  instances: 1
+  route: juice-shop-dev.apps.cf.np.cahcloud.net
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
